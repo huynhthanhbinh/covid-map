@@ -35,9 +35,12 @@ const DateSlider = ({ onClickSeekbar }) => {
   const startPoint = subDays(endPoint, difference);
 
   const [updated, setUpdated] = useState(midPoint);
-  const [min, setMin] = useState(startPoint);
-  const [max, setMax] = useState(endPoint);
   const [isPlay, setIsPlay] = useState(false);
+
+  // eslint-disable-next-line
+  const [min, setMin] = useState(startPoint);
+  // eslint-disable-next-line
+  const [max, setMax] = useState(endPoint);
 
   const onUpdate = ([milliseconds]) => {
     setUpdated(new Date(milliseconds));
@@ -53,6 +56,8 @@ const DateSlider = ({ onClickSeekbar }) => {
         onClickSeekbar(format(updated, "yyyy-MM-dd"));
       }, 1000);
     return () => clearInterval(timer);
+    
+    // eslint-disable-next-line
   }, [updated, isPlay]);
 
   const renderDateTime = (date, header) => {
@@ -124,13 +129,13 @@ const DateSlider = ({ onClickSeekbar }) => {
             )}
           </Ticks>
         </Slider>
-        <br/>
+        <br />
         {renderDateTime(updated, "Current seekbar value")}
       </div>
 
       <div>
-        <button onClick={() => setIsPlay((isPlay) => true)}>Play</button>
-        <button onClick={() => setIsPlay((isPlay) => false)}>Pause</button>
+        <button onClick={() => setIsPlay(true)}>Play</button>
+        <button onClick={() => setIsPlay(false)}>Pause</button>
       </div>
     </div>
   );

@@ -3,14 +3,15 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 import CovidMap from "./CovidMap";
-import PatientList from "./PatientList";
 import Container from "react-bootstrap/Container";
-import PatientInfo from "./PatientInfo";
 import DateSlider from "./../slider/DateSlider";
+
+import LocationList from "./LocationList";
+import LocationInfo from "./LocationInfo";
 
 import "./Dashboard.css";
 
-const Dashboard = (props) => {
+const Dashboard = () => {
   const [currentPatient, setCurrentPatient] = useState();
   const [currentPatientList, setCurrentPatientList] = useState();
 
@@ -30,7 +31,7 @@ const Dashboard = (props) => {
     <Container>
       <Row>
         <Col xs={2}>
-          <PatientList
+          <LocationList
             onPatientButtonClicked={onClickPatientButton}
             Seekbarsort={currentPatientList}
           />
@@ -44,7 +45,7 @@ const Dashboard = (props) => {
         </Col>
         <Col xs={3}>
           <h5>Location detail</h5>
-          {currentPatient && <PatientInfo patients={currentPatient} />}
+          {currentPatient && <LocationInfo patients={currentPatient} />}
         </Col>
       </Row>
 

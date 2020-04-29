@@ -1,8 +1,8 @@
 import React from "react";
 
-import "./PatientInfo.css";
+import "./LocationInfo.css";
 
-const PatientInfo = ({ patients }) => {
+const LocationInfo = ({ patients }) => {
   return (
     <ul>
       <li>Name: {patients.name}</li>
@@ -13,4 +13,4 @@ const PatientInfo = ({ patients }) => {
   );
 };
 
-export default PatientInfo;
+export default LocationInfo;

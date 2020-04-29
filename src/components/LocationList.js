@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
 import * as comparator from "../comparator";
 
-import "./PatientList.css";
+import "./LocationList.css";
 
-let valuesortnumber = null;
-
-const PatientList = ({ onPatientButtonClicked, Seekbarsort }) => {
-  const [patients, setPatients] = useState([]);
+const LocationList = ({ onPatientButtonClicked, Seekbarsort }) => {
+  const [patientList, setPatientList] = useState([]);
 
   function checkvalueSeekbar(list, Seekbarsort) {
-    let finishresult = new Array();
+    let finishresult = [];
 
     if (Seekbarsort === undefined) {
     } else {
@@ -17,8 +15,9 @@ const PatientList = ({ onPatientButtonClicked, Seekbarsort }) => {
         let tmp = item.verifyDate.substring(0, 10);
 
         if (tmp <= Seekbarsort) {
-          finishresult.push(item);
+          return finishresult.push(item);
         }
+        return 0;
       });
     }
     return finishresult;
@@ -29,13 +28,13 @@ const PatientList = ({ onPatientButtonClicked, Seekbarsort }) => {
       .then((res) => res.json())
       .then(
         (result) => {
-          setPatients(result.data);
+          setPatientList(result.data);
         },
         (error) => {}
       );
   }, []);
 
-  const sortedPatients = patients.sort(comparator.PatientComparator);
+  const sortedPatients = patientList.sort(comparator.PatientComparator);
 
   const finalSortedPatients = checkvalueSeekbar(sortedPatients, Seekbarsort);
 
@@ -63,4 +62,4 @@ const PatientList = ({ onPatientButtonClicked, Seekbarsort }) => {
   return <PatientOrderedList />;
 };
 
-export default PatientList;
+export default LocationList;
