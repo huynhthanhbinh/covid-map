@@ -43,7 +43,7 @@ const Dashboard = (props) => {
           />
         </Col>
         <Col xs={3}>
-          <h5>Thông tin chi tiết bệnh nhân</h5>
+          <h5>Location detail</h5>
           {currentPatient && <PatientInfo patients={currentPatient} />}
         </Col>
       </Row>

@@ -41,7 +41,7 @@ const PatientList = ({ onPatientButtonClicked, Seekbarsort }) => {
 
   const PatientOrderedList = () => (
     <div>
-      <h4> Danh sách các bệnh nhận sort Desc </h4>
+      <h4>Location list</h4>
       <div className="ScrollView">
         <ul>
           {finalSortedPatients.map((item, index) => (
@@ -51,8 +51,8 @@ const PatientList = ({ onPatientButtonClicked, Seekbarsort }) => {
                 onPatientButtonClicked(item);
               }}
             >
-              <h5 color="red">Tên: {item.name}</h5>
-              <div>Thời Gian: {item.verifyDate}</div>
+              <h5>Name: {item.name}</h5>
+              <div>Time: {item.verifyDate}</div>
             </li>
           ))}
         </ul>

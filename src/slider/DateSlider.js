@@ -7,7 +7,7 @@ import DateSliderHandler from "./DateSliderHandler";
 import DateSliderRail from "./DateSliderRail";
 import DateSliderTick from "./DateSliderTick";
 
-import "./DateSlider.css"
+import "./DateSlider.css";
 
 const MILLISECONDS_PER_DAY = 86400000;
 
@@ -19,9 +19,9 @@ const sliderStyle = {
 function formatTick(milliseconds) {
   return (
     <div className="seekbar-element">
-      { format(new Date(milliseconds), "MMM dd, yyyy") }
-    </div> 
-  )
+      {format(new Date(milliseconds), "MMM dd, yyyy")}
+    </div>
+  );
 }
 
 const halfDay = 1000 * 60 * 60 * 12;
@@ -62,11 +62,10 @@ const DateSlider = ({ onClickSeekbar }) => {
           width: "100%",
           textAlign: "center",
           fontFamily: "Arial",
-          margin: 5,
         }}
       >
         <b>{header}:</b>
-        <div style={{ fontSize: 12 }}>{format(date, "yyyy-MM-dd")}</div>
+        <div style={{ fontSize: "20px" }}>{format(date, "MMM dd, yyyy")}</div>
       </div>
     );
   };
@@ -76,11 +75,10 @@ const DateSlider = ({ onClickSeekbar }) => {
     dateList.push(startDay);
     dateList.push(today);
     return dateList;
-  }
+  };
 
   return (
     <div style={{ margin: "2%", width: "100%" }}>
-      {renderDateTime(updated, "Updated")}
       <div style={{ margin: "5%", height: 120, width: "90%" }}>
         <Slider
           mode={1}
@@ -92,7 +90,9 @@ const DateSlider = ({ onClickSeekbar }) => {
           values={[+updated]}
         >
           <Rail>
-            {({ getRailProps }) => <DateSliderRail getRailProps={getRailProps} />}
+            {({ getRailProps }) => (
+              <DateSliderRail getRailProps={getRailProps} />
+            )}
           </Rail>
           <Handles>
             {({ handles, getHandleProps }) => (
@@ -124,16 +124,13 @@ const DateSlider = ({ onClickSeekbar }) => {
             )}
           </Ticks>
         </Slider>
+        <br/>
+        {renderDateTime(updated, "Current seekbar value")}
       </div>
 
       <div>
-        <button
-          onClick={() => setIsPlay((isPlay) => true)}>
-          Play
-        </button>
-        <button onClick={() => setIsPlay((isPlay) => false)}>
-          Pause
-        </button>
+        <button onClick={() => setIsPlay((isPlay) => true)}>Play</button>
+        <button onClick={() => setIsPlay((isPlay) => false)}>Pause</button>
       </div>
     </div>
   );
