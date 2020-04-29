@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./PatientInfo.css";
+
 const PatientInfo = ({ patients }) => {
   return (
     <ul>

@@ -7,6 +7,8 @@ import {
   Marker,
 } from "react-google-maps";
 
+import "./CovidMap.css";
+
 const CovidMap = ({
   onPatientMarkerClicked,
   onLocationButtonClick,

@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import { Slider, Rail, Handles, Ticks } from "react-compound-slider";
-import { SliderRail, Handle, Tick } from "./DateSliderHelper"; // example render components - source below
 import { subDays, startOfToday, format, addDays } from "date-fns";
+
+import DateSliderHandler from "./DateSliderHandler";
+import DateSliderRail from "./DateSliderRail";
+import DateSliderTick from "./DateSliderTick";
 
 import "./DateSlider.css"
 
@@ -90,13 +93,13 @@ const DateSlider = ({ onClickSeekbar }) => {
           values={[+updated]}
         >
           <Rail>
-            {({ getRailProps }) => <SliderRail getRailProps={getRailProps} />}
+            {({ getRailProps }) => <DateSliderRail getRailProps={getRailProps} />}
           </Rail>
           <Handles>
             {({ handles, getHandleProps }) => (
               <div>
                 {handles.map((handle) => (
-                  <Handle
+                  <DateSliderHandler
                     key={handle.id}
                     handle={handle}
                     domain={[+min, +max]}
@@ -111,7 +114,7 @@ const DateSlider = ({ onClickSeekbar }) => {
             {({ ticks }) => (
               <div>
                 {ticks.map((tick) => (
-                  <Tick
+                  <DateSliderTick
                     key={tick.id}
                     tick={tick}
                     count={ticks.length}

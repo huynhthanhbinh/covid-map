@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import * as comparator from "./comparator";
+import * as comparator from "../comparator";
 
 import "./PatientList.css";
 
