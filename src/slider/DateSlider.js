@@ -48,7 +48,6 @@ const DateSlider = ({ onClickSeekbar }) => {
   useEffect(() => {
     const timer =
       isPlay === true &&
-      format(updated, "yyyy-MM-dd") <= format(updated, "yyyy-MM-dd") &&
       setInterval(() => {
         setUpdated((updated) => addDays(updated, 1));
         onClickSeekbar(format(updated, "yyyy-MM-dd"));
