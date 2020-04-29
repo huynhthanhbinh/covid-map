@@ -4,6 +4,8 @@ import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import Dashboard from "./components/Dashboard";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 require("./mocks");
 
 ReactDOM.render(

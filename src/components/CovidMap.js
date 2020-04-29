@@ -5,7 +5,6 @@ import {
   withGoogleMap,
   GoogleMap,
   Marker,
-  InfoWindow,
 } from "react-google-maps";
 
 const CovidMap = ({
@@ -27,7 +26,7 @@ const CovidMap = ({
   function checkvalueSeekbar(arr, Seekbarsort) {
     // var dateTMP = new Date("2020-04-12T00:00:00");
 
-    let finishresult = new Array();
+    let finishresult = [];
 
     if (Seekbarsort === undefined) {
     } else {
@@ -36,8 +35,9 @@ const CovidMap = ({
         let a = item.verifyDate.substring(0, 10);
 
         if (a < Seekbarsort) {
-          finishresult.push(item);
+          return finishresult.push(item);
         }
+        return 0;
       });
     }
     return finishresult;
@@ -68,8 +68,8 @@ const CovidMap = ({
       googleMapURL:
         "https://maps.googleapis.com/maps/api/js?key=AIzaSyDY_ENrX2jDL1HwXSNgEMUE-NcqDw2o90M&libraries=geometry,drawing,places",
       loadingElement: <div style={{ height: `100%` }} />,
-      containerElement: <div style={{ height: `600px` }} />,
-      mapElement: <div style={{ height: `100%` }} />,
+      containerElement: <div style={{ height: `400px` }} />,
+      mapElement: <div style={{ height: `100%`, minHeight: `100%` }} />,
     }),
     withScriptjs,
     withGoogleMap

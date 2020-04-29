@@ -1,28 +1,23 @@
 import React, { useEffect, useState } from "react";
+import * as comparator from './comparator';
 
-import { compose, withProps } from "recompose";
-import PatientInfo from "./PatientInfo";
-import Pagination from "./Pagination";
-
-const axios = require("axios").default;
-
-var valuesortnumber = null;
+let valuesortnumber = null;
 
 const PatientList = ({ onPatientButtonClicked, Seekbarsort }) => {
   const [patients, setPatients] = useState([]);
 
-  function checkvalueSeekbar(arr, Seekbarsort) {
-    var dateTMP = new Date("2020-04-12T00:00:00");
+  function checkvalueSeekbar(list, Seekbarsort) {
+    
 
     let finishresult = new Array();
 
     if (Seekbarsort === undefined) {
     } else {
-      arr.map((item, index) => {
-        // item.verifyDate>"2020-04-12T00:00:00"
-        let a = item.verifyDate.substring(0, 10);
+      list.map((item, index) => {
+        
+        let tmp = item.verifyDate.substring(0, 10);
 
-        if (a <= Seekbarsort) {
+        if (tmp <= Seekbarsort) {
           finishresult.push(item);
         }
       });
@@ -47,13 +42,7 @@ const PatientList = ({ onPatientButtonClicked, Seekbarsort }) => {
       );
   }, []);
 
-  const sortedPatients = patients
-    .sort((a, b) => {
-      var dateA = new Date(a.verifyDate);
-      var dateB = new Date(b.verifyDate);
-      return dateA - dateB;
-    })
-    .reverse();
+  const sortedPatients = patients.sort(comparator.PatientComparator)
 
   const finalSortedPatients = checkvalueSeekbar(sortedPatients, Seekbarsort);
 
@@ -63,17 +52,13 @@ const PatientList = ({ onPatientButtonClicked, Seekbarsort }) => {
       <div className="ScrollView">
         <ul>
           {finalSortedPatients.map((item, index) => (
-            <li key={index}>
+            <li key={index}  onClick={() => {
+              onPatientButtonClicked(item);
+            }}>
               <h5 color="red">Tên: {item.name}</h5>
               <div>Thời Gian: {item.verifyDate}</div>
 
-              <button
-                onClick={() => {
-                  onPatientButtonClicked(item);
-                }}
-              >
-                Xem Vị Trí
-              </button>
+             
             </li>
           ))}
         </ul>
