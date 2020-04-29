@@ -609,7 +609,7 @@ fetchMock.get("https://maps.vnpost.vn/apps/covid19/api/patientapi/list", {
       lng: 106.700134,
       patientGroup: "F0",
       note: "Đi chơi ở Sài Gòn Square từ 19h đến 21h ngày 8/3/2020",
-      verifyDate: "2013-03-08T00:00:00",
+      verifyDate: "2020-03-08T00:00:00",
     },
     {
       name: "BN-123",
@@ -1070,7 +1070,7 @@ fetchMock.get("https://maps.vnpost.vn/apps/covid19/api/patientapi/list", {
       patientGroup: "F0",
       note:
         "Đi từ Sân bay Chagi, Singapore 14/03/2020 lúc 09h15 bằng máy bay MI632 tới sân bay Đà Nẵng 14/03/2020 lúc 11h00",
-      verifyDate: "2014-03-14T00:00:00",
+      verifyDate: "2020-03-14T00:00:00",
     },
     {
       name: "BN-70",
