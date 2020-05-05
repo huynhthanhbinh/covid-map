@@ -14,7 +14,7 @@ const NavContent = () => {
         <Route exact path="/" component={Home} />
         <Route path="/map" component={Map} />
         <Route path="/stats" component={Stats} />
-        <Route exact path="*" component={Error} />
+        <Route component={Error} />
       </Switch>
     </Row>
   );
