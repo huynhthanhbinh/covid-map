@@ -28,7 +28,7 @@ const Dashboard = () => {
   };
 
   return (
-    <Container>
+    <Container className="map-main">
       <Row>
         <Col xs={2}>
           <LocationList
