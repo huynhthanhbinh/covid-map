@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 
 import CovidMap from "./CovidMap";
 import Container from "react-bootstrap/Container";
-import DateSlider from "../../slider/DateSlider";
+import DateSlider from "../slider/DateSlider";
 
 import LocationList from "./LocationList";
 import LocationInfo from "./LocationInfo";
