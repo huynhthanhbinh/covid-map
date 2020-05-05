@@ -84,7 +84,7 @@ const DateSlider = ({ onClickSeekbar }) => {
 
   return (
     <div style={{ margin: "2%", width: "100%" }}>
-      <div style={{ margin: "5%", height: 120, width: "90%" }}>
+      <div style={{ margin: "7%", height: 120, width: "80%" }}>
         <Slider
           mode={1}
           step={halfDay}

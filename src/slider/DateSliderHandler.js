@@ -21,7 +21,6 @@ const DateSliderHandler = ({
           width: 24,
           height: 42,
           cursor: "pointer",
-          // border: "1px solid white",
           backgroundColor: "none",
         }}
         {...getHandleProps(id)}

@@ -16,3 +16,19 @@ code {
   height: 350px;
   overflow-y: scroll;
 }
+
+.navbar {
+  background-color: black;
+  margin-bottom: 30px;
+}
+
+.navbar-col {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.navbar-icon {
+  width: 64px;
+  height: 64px;
+}
