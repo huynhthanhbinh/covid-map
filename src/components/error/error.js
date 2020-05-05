@@ -7,7 +7,7 @@ import "./error.css";
 const NotFound = () => {
   return (
     <Container className="404-not-found">
-      <Row>
+      <Row className="justify-content-center">
         <h1>Oops ! We cannot find the page you are looking for !</h1>
       </Row>
     </Container>

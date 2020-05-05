@@ -7,7 +7,7 @@ import "./Dashboard.css";
 const Stats = () => {
   return (
     <Container className="stats-main">
-      <Row>
+      <Row className="justify-content-center">
         <h1>Statistics page</h1>
       </Row>
     </Container>

@@ -7,7 +7,7 @@ import "./home.css";
 const Home = () => {
   return (
     <Container className="home-main">
-      <Row>
+      <Row className="justify-content-center">
         <h1>Homepage</h1>
       </Row>
     </Container>
