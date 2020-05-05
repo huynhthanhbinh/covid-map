@@ -1,0 +1,19 @@
+.navbar {
+  background-color: black;
+  margin-bottom: 30px;
+}
+
+.navbar-col {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.navbar-col img:hover {
+  filter: invert(50%);
+}
+
+.navbar-icon {
+  width: 48px;
+  height: 48px;
+}
