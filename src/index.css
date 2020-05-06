@@ -11,13 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.ScrollView {
-  height: 350px;
-  overflow-y: scroll;
-}
-
-.container {
-  width: 100%;
-  min-width: 100%;
-}

@@ -1,0 +1,9 @@
+.ScrollView {
+  height: 350px;
+  overflow-y: scroll;
+}
+
+.container {
+  width: 100%;
+  min-width: 100%;
+}

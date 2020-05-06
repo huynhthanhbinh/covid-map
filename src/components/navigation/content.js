@@ -1,13 +1,17 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 
 import Home from "../home/home";
 import Map from "../map/Dashboard";
-import Stats from "../stats/Dashboard"
+import Stats from "../stats/Dashboard";
 import Error from "../error/error";
 
-const NavContent = () => {
+const NavContent = ({ history }) => {
+  history.listen((location, action) => {
+    console.log('action=' + action + ', path=' + location.pathname);
+  });
+
   return (
     <Row className="navcontent">
       <Switch>
@@ -19,4 +23,4 @@ const NavContent = () => {
     </Row>
   );
 };
-export default NavContent;
+export default withRouter(NavContent);

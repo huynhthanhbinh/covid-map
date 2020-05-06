@@ -1,1 +1,3 @@
 rm -rf node_modules/gh-pages/.cache
+https://react-google-maps-api-docs.netlify.app
+https://github.com/reactjs/reactjs.org/issues/2120
