@@ -23,8 +23,12 @@ done
 
 5. Use git to track and mange your mid-term working, 
 capture your commit history as proof: 1 points
+
+Screenshot: gitCommits.png
 Check here: https://github.com/huynhthanhbinh/covid-map
 
 done
+
+Extra: handling 404 Not Found Router
 
 SelfEvaluate: 10/10
