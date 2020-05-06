@@ -15,7 +15,7 @@ require("./mocks");
 
 ReactDOM.render(
   <StrictMode>
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <Container>
         <NavigationBar />
         <NavigationContent />
