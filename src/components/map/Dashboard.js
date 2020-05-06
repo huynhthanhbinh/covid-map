@@ -29,6 +29,9 @@ const Dashboard = () => {
 
   return (
     <Container className="map-main">
+      <Row className="justify-content-center">
+        <h1>Movement History</h1>
+      </Row>
       <Row>
         <Col xs={2}>
           <LocationList
@@ -50,7 +53,7 @@ const Dashboard = () => {
       </Row>
 
       <Row>
-        <DateSlider onClickSeekbar={onClickSeekbar}/>
+        <DateSlider onClickSeekbar={onClickSeekbar} />
       </Row>
     </Container>
   );

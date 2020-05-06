@@ -8,7 +8,7 @@ const Stats = () => {
   return (
     <Container className="stats-main">
       <Row className="justify-content-center">
-        <h1>Statistics page</h1>
+        <h1>Statistics</h1>
       </Row>
     </Container>
   );

@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <Container className="home-main">
       <Row className="justify-content-center">
-        <h1>Homepage</h1>
+        <h1>Home</h1>
       </Row>
     </Container>
   );

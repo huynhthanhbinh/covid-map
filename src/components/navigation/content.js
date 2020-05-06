@@ -1,6 +1,6 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
-import { Switch, Route, withRouter } from "react-router-dom";
+import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 
 import Home from "../home/home";
 import Map from "../map/Dashboard";
@@ -18,7 +18,8 @@ const NavContent = ({ history }) => {
         <Route exact path="/" component={Home} />
         <Route exact path="/map" component={Map} />
         <Route exact path="/stats" component={Stats} />
-        <Route component={Error} />
+        <Route exact path="/404" component={Error} />
+        <Redirect from="*" to="/404" />
       </Switch>
     </Row>
   );
