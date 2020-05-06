@@ -1,5 +1,4 @@
 {
-  "homepage": "http://covid2019-statistics.herokuapp.com",
   "name": "covid-map",
   "version": "0.1.0",
   "private": true,
@@ -42,7 +41,8 @@
     "deploy": "gh-pages -d build",
     "clean": "rm -rf node_modules",
     "reinstall": "npm run clean && npm install",
-    "rebuild": "npm run clean && npm install && npm run build"
+    "rebuild": "npm run clean && npm install && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
